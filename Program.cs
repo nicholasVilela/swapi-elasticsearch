@@ -8,29 +8,27 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Elasticsearch.Net;
 using Nest;
+using swapi_elasticsearch.Controllers;
 
 namespace swapi_elasticsearch
 {
+
     public class Program
     {
         public static void Main()
         {
+            var _controller = new SwapiController();
+
             var uri = new Uri("http://localhost:9200");
             var settings = new ConnectionSettings(uri)
                 .DefaultIndex("people");
 
             var client = new ElasticClient(settings);
 
-            var person = new Person
-            {
-                Id = 1,
-                Name = "Nicholas",
-                Height = 666,
-                Mass = 123,
-                Gender = "Male"
-            };
+            var personList = _controller.GetAll();
+            Console.WriteLine(personList);
 
-            var indexResponse = client.IndexDocument(person);
+            var indexResponse = client.IndexDocument(personList.Result);
 
             var searchResponse = client.Search<Person>(s => s
                 .From(0)
@@ -38,7 +36,7 @@ namespace swapi_elasticsearch
                 .Query(q => q
                     .Match(m => m
                         .Field(f => f.Name)
-                        .Query("Nicholas")
+                        .Query("Luke")
                     )
                 )
             );
