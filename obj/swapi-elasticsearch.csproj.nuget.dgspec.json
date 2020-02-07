@@ -10,14 +10,14 @@
         "projectUniqueName": "C:\\swapi-elasticsearch\\swapi-elasticsearch.csproj",
         "projectName": "swapi-elasticsearch",
         "projectPath": "C:\\swapi-elasticsearch\\swapi-elasticsearch.csproj",
-        "packagesPath": "C:\\Users\\nvilela\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Nicholas\\.nuget\\packages\\",
         "outputPath": "C:\\swapi-elasticsearch\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\nvilela\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nicholas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Elasticsearch.Net": {
+              "target": "Package",
+              "version": "[7.5.1, )"
+            },
+            "NEST": {
+              "target": "Package",
+              "version": "[7.5.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -5,5 +5,10 @@
     <RootNamespace>swapi_elasticsearch</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Elasticsearch.Net" Version="7.5.1" />
+    <PackageReference Include="NEST" Version="7.5.1" />
+  </ItemGroup>
+
 
 </Project>
